@@ -1,0 +1,35 @@
+<!-- This is where form erros go -->
+<% if @car.errors.any? %>
+  <div>
+    <h4> <%= @car.errors.count %> Errors While Saving The Car: </h4>
+    <ul>
+      <%= @car.errors.full_messages.each do |message | %>
+      <li class='danger-text'> <%= message %> </li>
+      <% end %>
+    </ul>
+  </div>
+  <% end %>
+
+  <%= form_for @car do |f| %>
+    <div class="form-group">
+      <%= f.label :make %>
+      <%= f.text_field :make, class: 'form-control', placeholder: 'Make', autoFocus: true %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :model %>
+      <%= f.text_field :model, class: 'form-control', placeholder: 'Model' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :year %>
+      <%= f.number_field :year, class: 'form-control', placeholder: 'Year' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :price %>
+      <%= f.number_field :price, class: 'form-control', placeholder: 'Price' %>
+    </div>
+
+    <%= f.submit nil, class: 'btn btn-primary' %>
+  <% end %>

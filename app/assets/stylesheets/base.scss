@@ -1,0 +1,19 @@
+.flash {
+  text-align: center;
+  font-size: 22px;
+  width: 100%;
+  height: 50px;
+  border-radius: 10px;
+}
+
+.flash.info {
+  background-color: lightblue;
+}
+
+.flash.error {
+  background-color: red;
+}
+
+.flash.success {
+  background-color: green;
+}
